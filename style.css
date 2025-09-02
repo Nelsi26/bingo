@@ -1,0 +1,187 @@
+/* Fondo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffd6f3, #ffe6f8);
+  color: #700047;
+}
+
+/* Layout principal */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Historial */
+.history {
+  width: 180px;
+  background-color: #fff0f7;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.history h2 {
+  margin-top: 0;
+  color: #cc0066;
+}
+
+#history-list {
+  list-style: none;
+  padding: 0;
+}
+
+#history-list li {
+  margin: 8px 0;
+  text-align: center;
+  font-size: 18px;
+  color: #cc0066;
+  font-weight: bold;
+  background: #ffccdd;
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: inset 0 0 5px #cc6699;
+}
+
+/* Sección del juego */
+.game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Bombo */
+.bombo-container {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ff99cc, #cc0066);
+  box-shadow:
+    inset -15px -15px 30px rgba(255, 255, 255, 0.2),
+    inset 15px 15px 30px rgba(0, 0, 0, 0.2),
+    0 15px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin-bottom: 40px;
+  border: 8px solid #ffccdd;
+  overflow: hidden;
+}
+
+/* Bolitas decorativas del spinner */
+.spinner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: spin 10s linear infinite;
+  transform-origin: center;
+  position: relative;
+}
+
+.ball {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb3d9,  #e84e98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+  position: absolute;
+  box-shadow:
+    inset -1px -1px 3px rgba(255, 255, 255, 0.4),
+    1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Capa de vidrio */
+.glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.4),
+    transparent 60%
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Bolita seleccionada con número visible */
+.current-ball {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb3d9, #cc0066);
+  box-shadow:
+    inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+    4px 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: pop 0.4s ease-out;
+}
+
+/* Botón sacar */
+#draw-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: none;
+  background-color: #ff66b2;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+#draw-btn:hover {
+  background-color: #cc0066;
+}
+
+/* Botón reiniciar */
+#reset-btn {
+  margin-top: 15px;
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  background-color: #ff99cc;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+}
+
+#reset-btn:hover {
+  background-color: #cc3366;
+}
+
+/* Animaciones */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

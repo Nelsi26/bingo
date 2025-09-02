@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bingooo</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <aside class="history">
+      <h2>Historial</h2>
+      <ul id="history-list"></ul>
+    </aside>
+
+    <main class="game">
+      <div class="bombo-container">
+        <div class="spinner" id="spinner">
+          <!-- Bolitas con números insertadas desde JS -->
+        </div>
+        <div class="glass-overlay"></div>
+      </div>
+
+      <div class="current-ball" id="current-ball"></div>
+      <button id="draw-btn">Sacar Bolita</button>
+      <button id="reset-btn">Reiniciar Juego</button>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
