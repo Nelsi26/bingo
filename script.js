@@ -1,4 +1,4 @@
-const totalBalls = 90;
+const totalBalls = 75;
 let availableBalls = Array.from({ length: totalBalls }, (_, i) => i + 1);
 const historyList = document.getElementById("history-list");
 const currentBall = document.getElementById("current-ball");
@@ -84,3 +84,4 @@ resetBtn.addEventListener("click", () => {
   utterance.lang = 'es-ES';
   speechSynthesis.speak(utterance);
 });
+
